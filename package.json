@@ -66,5 +66,13 @@
     "github",
     "ecma6",
     "ecmascript2015"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaomarcuslf/react-layout-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joaomarcuslf/react-layout-test/issues"
+  },
+  "homepage": "https://github.com/joaomarcuslf/react-layout-test#readme"
 }
