@@ -43,14 +43,14 @@
     "gulp-util": "^3.0.7",
     "imports-loader": "~0.6.3",
     "mocha": "^2.5.3",
-    "nodemon": "^1.11.0",
     "webpack": "~1.4.13",
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
     "start": "npm install && gulp run:build",
+    "server": "node server.js",
     "dev": "nf start",
-    "server": "webpack-dev-server --hot --inline --color --port 8000 --host 0.0.0.0 --output-public-path=/build/ --content-base ./",
+    "dev-server": "webpack-dev-server --hot --inline --color --port 8000 --host 0.0.0.0 --output-public-path=/build/ --content-base ./",
     "bundle:js": "webpack",
     "build:js": "webpack --minimize",
     "bundle:scss": "gulp bundle:scss",
