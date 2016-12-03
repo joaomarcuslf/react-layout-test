@@ -14,8 +14,8 @@ export default class AppContainer extends React.Component {
 
   render(): ?React$Element<div> {
     return(
-      <section className="application-container">
-        <div className="columns is-gapless is-mobile is-desktop">
+      <section className='application-container'>
+        <div className='columns is-gapless is-mobile is-desktop'>
           <h1>
             Hello World
           </h1>

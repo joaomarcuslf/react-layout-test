@@ -8,7 +8,7 @@ import Container from './Components/Container/Container.jsx';
 
 ReactDOM.render(
   <Router history={hashHistory}>
-    <Route path="/" component={App}>
+    <Route path='/' component={App}>
       <IndexRoute component={Container} />
     </Route>
   </Router>,

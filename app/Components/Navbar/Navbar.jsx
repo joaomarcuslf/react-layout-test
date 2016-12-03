@@ -52,7 +52,7 @@ export default class Navbar extends React.Component {
     });
 
     return (
-      <nav className='nav'>
+      <nav id='nav' className='nav'>
         <header className='nav-left'>
           <div className='nav-item is-brand logo'>
             <img src='assets/images/logo-americanas-900-x-225-fw@3x.png' alt='Lojas Americanas logo' />
@@ -68,7 +68,7 @@ export default class Navbar extends React.Component {
         <div className={menuClass}>
           {navBarItem}
 
-          <a className="nav-item menu-item hollowed-button" href="#" onClick={this.handleToggleClick}> FAÇA UM TOUR </a>
+          <a className='nav-item menu-item hollowed-button' href='#' onClick={this.handleToggleClick}> FAÇA UM TOUR </a>
         </div>
       </nav>
     );

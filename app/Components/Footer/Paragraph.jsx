@@ -12,7 +12,7 @@ export default class Paragraph extends React.Component {
 
   render(): ?React$Element<div> {
     return (
-      <div className="paragraph">
+      <div className='paragraph'>
         {this.props.text}
       </div>
     );

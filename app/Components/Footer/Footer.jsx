@@ -38,25 +38,28 @@ export default class Footer extends React.Component {
         return <Icon iconName={elem.iconName} alt={elem.alt} key={index} />;
       });
 
-    let aboutElm = <span> Esse modelo é totalmente fictício e foi para nos ajudar a testar recursos de desenvolvimento de websites responsivos. </span>;
+    let aboutElm = <span>
+      Esse modelo é totalmente fictício e foi para nos ajudar a
+      testar recursos de desenvolvimento de websites responsivos.
+    </span>;
 
     return (
-      <footer className="footer">
-        <div className="columns is-mobile is-multiline ">
+      <footer className='footer'>
+        <div className='columns is-mobile is-multiline '>
           <FooterSection
-            classes="section column is-half-mobile"
+            classes='section column is-half-mobile'
             title='CONTATOS'
             child={paragraphsElm} />
           <FooterSection
-            classes="section column is-half-mobile"
+            classes='section column is-half-mobile'
             title='SIGA-NOS'
             child={iconsElm} />
           <FooterSection
-            classes="section column"
+            classes='section column'
             title='SOBRE'
             child={aboutElm} />
 
-          <div className="separator" />
+          <div className='separator' />
         </div>
       </footer>
     );

@@ -14,7 +14,7 @@ export default class Icon extends React.Component {
     let path = `assets/images/icons/${this.props.iconName}.png`;
 
     return (
-      <span className="icon">
+      <span className='icon'>
         <img src={path} alt={this.props.alt} />
       </span>
     );
