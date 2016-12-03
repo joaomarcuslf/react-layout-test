@@ -2,7 +2,7 @@
 import React from 'react';
 import FooterSection from './FooterSection.jsx';
 import Paragraph from './Paragraph.jsx';
-import Icon from './Icon.jsx';
+import Icon from '../Icon/Icon.jsx';
 
 export default class Footer extends React.Component {
   constructor() {
