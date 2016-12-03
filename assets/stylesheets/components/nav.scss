@@ -1,13 +1,7 @@
 $open-bgcolor: #6b6b6b;
 
 .nav {
-  background-color: $main-color;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 12px;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: bold;
-  letter-spacing: 1px;
+  @extend .main-block;
   max-height: 56px;
 
   .menu-item {

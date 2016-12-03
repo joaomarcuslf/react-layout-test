@@ -1,0 +1,7 @@
+.footer {
+  @extend .main-block;
+  color: $secondary-color;
+
+  @media (min-width: 980px) {
+  }
+}
