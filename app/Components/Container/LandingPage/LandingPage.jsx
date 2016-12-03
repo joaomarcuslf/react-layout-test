@@ -15,11 +15,11 @@ export default class LandingPage extends React.Component {
         { iconName: 'wallet', alt: 'Wallet Icon' },
         { iconName: 'case', alt: 'Case Icon' }
       ]
-    }
+    };
   }
 
   shouldComponentUpdate(): boolean {
-    return true;
+    return false;
   }
 
   render(): ?React$Element<div> {
