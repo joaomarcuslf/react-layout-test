@@ -60,6 +60,34 @@ export default class Footer extends React.Component {
             child={aboutElm} />
 
           <div className='separator' />
+
+          <div className='columns is-multiline-mobile above-content'>
+            <div className='columns is-mobile column tabs-container'>
+              <div className='tab-item column'>
+                <a>DESTINOS</a>
+              </div>
+              <div className='tab-item column'>
+                <a>PLANOS</a>
+              </div>
+              <div className='tab-item column'>
+                <a>DEPOIMENTOS</a>
+              </div>
+              <div className='tab-item column'>
+                <a>CONTATO</a>
+              </div>
+            </div>
+
+            <div className='paragraph column float-bottom-mobile is-half-mobile left-content'>
+              © 2016 Lojas Americanas
+            </div>
+
+            <div className='column columns is-mobile float-bottom-mobile is-half-mobile right-content'>
+              <span className='paragraph column is-narrow top-text'>Voltar ao Topo </span>
+              <a href='#nav' className='top-button column is-narrow is-pulled-right'>
+                <img src='assets/images/icons/go-to-top@3x.png' alt='Ir ao topo' />
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     );
