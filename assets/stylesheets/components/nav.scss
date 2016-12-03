@@ -21,40 +21,41 @@ $open-bgcolor: #6b6b6b;
       border-color: $white-hover;
     }
   }
-
-  .open {
-    display: block;
-
-    .menu-item {
-      background-color: $open-bgcolor;
+  @media (max-width: 980px) {
+    .open {
       display: block;
-      margin: 0 auto;
+
+      .menu-item {
+        background-color: $open-bgcolor;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .hollowed-button {
+        border: 0;
+        border-radius: 0;
+        border-top: 1px solid $gray-border;
+      }
     }
 
-    .hollowed-button {
-      border: 0;
-      border-radius: 0;
-      border-top: 1px solid $gray-border;
-    }
-  }
+    .nav-toggle {
+      $ham-width: 16px;
 
-  .nav-toggle {
-    $ham-width: 16px;
+      &:hover {
+        background-color: $main-color;
+      }
 
-    &:hover {
-      background-color: $main-color;
-    }
+      span {
+        background-color: $secondary-color;
+        height: 2px;
+        width: $ham-width;
+      }
 
-    span {
-      background-color: $secondary-color;
-      height: 2px;
-      width: $ham-width;
-    }
-
-    .half-bar {
-      $half-bar-width: $ham-width / 2;
-      left: calc(50% + #{$half-bar-width});
-      width: $half-bar-width;
+      .half-bar {
+        $half-bar-width: $ham-width / 2;
+        left: calc(50% + #{$half-bar-width});
+        width: $half-bar-width;
+      }
     }
   }
 
