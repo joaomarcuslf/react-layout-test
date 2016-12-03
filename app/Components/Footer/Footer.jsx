@@ -1,9 +1,25 @@
 /* @flow */
 import React from 'react';
+import FooterSection from './FooterSection.jsx';
+import Paragraph from './Paragraph.jsx';
+import Icon from './Icon.jsx';
 
 export default class Footer extends React.Component {
   constructor() {
     super();
+
+    this.state = {
+      contactTexts: [
+        'Rua Nome da Rua, 300 Rio de Janeiro - RJ',
+        '+55 21 1234-5678',
+        'contato@lojasamericanas.net'
+      ],
+      icons: [
+        { iconName: 'pinterest', alt: 'Logo Pinterest' },
+        { iconName: 'facebook', alt: 'Logo Facebook' },
+        { iconName: 'twitter', alt: 'Logo Twitter' }
+      ]
+    };
   }
 
   shouldComponentUpdate(): boolean {
@@ -11,54 +27,37 @@ export default class Footer extends React.Component {
   }
 
   render(): ?React$Element<h1> {
+
+    let paragraphsElm = this.state.contactTexts.map(
+      (elem: string, index: integer): ?React$Element<Paragraph> => {
+        return <Paragraph text={elem} key={index} />;
+      });
+
+    let iconsElm = this.state.icons.map(
+      (elem: object, index: integer): ?React$Element<Icon> => {
+        return <Icon iconName={elem.iconName} alt={elem.alt} key={index} />;
+      });
+
+    let aboutElm = <span> Esse modelo é totalmente fictício e foi para nos ajudar a testar recursos de desenvolvimento de websites responsivos. </span>;
+
     return (
       <footer className="footer">
         <div className="columns is-mobile is-multiline ">
-          <section className="section column is-half-mobile">
-            <div className="heading">
-              <h1 className="title">
-                CONTATOS
-              </h1>
-              <h2 className="subtitle">
-                <div className="paragraph">Rua Nome da Rua, 300 Rio de Janeiro - RJ</div>
-                <div className="paragraph">+55 21 1234-5678</div>
-                <div className="paragraph">contato@lojasamericanas.net</div>
-              </h2>
-            </div>
-          </section>
+          <FooterSection
+            classes="section column is-half-mobile"
+            title='CONTATOS'
+            child={paragraphsElm} />
+          <FooterSection
+            classes="section column is-half-mobile"
+            title='SIGA-NOS'
+            child={iconsElm} />
+          <FooterSection
+            classes="section column"
+            title='SOBRE'
+            child={aboutElm} />
 
-          <section className="section column is-half-mobile">
-            <div className="heading">
-              <h1 className="title">
-                SIGA-NOS
-              </h1>
-              <h2 className="subtitle">
-                <span className="icon">
-                  <img src='assets/images/icons/pinterest.png' alt='' />
-                </span>
-                <span className="icon">
-                  <img src='assets/images/icons/facebook.png' alt='' />
-                </span>
-                <span className="icon">
-                  <img src='assets/images/icons/twitter.png' alt='' />
-                </span>
-              </h2>
-            </div>
-          </section>
-
-          <section className="section column">
-            <div className="heading">
-              <h1 className="title">
-                SOBRE
-              </h1>
-              <h2 className="subtitle">
-                Esse modelo é totalmente fictício e foi para nos ajudar a
-                testar recursos de desenvolvimento de websites responsivos.
-              </h2>
-            </div>
-          </section>
+          <div className="separator" />
         </div>
-        <div className="separator" />
       </footer>
     );
   }
