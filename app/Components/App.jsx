@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react';
+import Navbar from './Navbar/Navbar.jsx';
 
 export default class App extends React.Component {
   propTypes: {
@@ -18,6 +19,7 @@ export default class App extends React.Component {
     return(
       <div>
         {this.props.children}
+        <Footer />
       </div>
     );
   }
