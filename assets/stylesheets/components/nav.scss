@@ -1,11 +1,47 @@
-$main-color: #4b4b4b;
+$open-bgcolor: #6b6b6b;
 
 .nav {
   background-color: $main-color;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  max-height: 56px;
 
+  .menu-item {
+    color: $secondary-color;
+    max-height: 30px;
+
+    &:hover {
+      color: $white-hover;
+    }
+  }
+
+  .hollowed-button {
+    border: solid 2px $secondary-color;
+    border-radius: 50px;
+
+    &:hover {
+      border-color: $white-hover;
+    }
+  }
 
   .open {
     display: block;
+
+    .menu-item {
+      background-color: $open-bgcolor;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .hollowed-button {
+      border: 0;
+      border-radius: 0;
+      border-top: 1px solid $gray-border;
+    }
   }
 
   .nav-toggle {
@@ -14,15 +50,38 @@ $main-color: #4b4b4b;
     &:hover {
       background-color: $main-color;
     }
-    
+
     span {
-      background-color: white;
-      width: $ham-width;
+      background-color: $secondary-color;
       height: 2px;
+      width: $ham-width;
     }
+
     .half-bar {
-      width: $ham-width/2;
-      left: calc(50% + $ham-width/2);
+      $half-bar-width: $ham-width / 2;
+      left: calc(50% + #{$half-bar-width});
+      width: $half-bar-width;
+    }
+  }
+
+  @media (min-width: 980px) {
+    height: 156px;
+
+    .logo {
+      padding: 10px 65px;
+    }
+
+    .nav-right {
+      padding: 10px;
+      padding-right: 5%;
+
+      .menu-item {
+        margin: 0 5px;
+      }
+
+      .hollowed-button {
+        padding: 10px 20px;
+      }
     }
   }
 }

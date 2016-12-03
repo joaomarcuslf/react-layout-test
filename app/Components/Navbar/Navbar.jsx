@@ -43,8 +43,9 @@ export default class Navbar extends React.Component {
   render(): ?React$Element<nav> {
     let menuClass = (this.state.open) ? 'nav-right nav-menu open' : 'nav-right nav-menu';
 
-    let navBarItem = this.state.navBarItems.map((elm: object): ?React$Element<NavbarItem> => {
+    let navBarItem = this.state.navBarItems.map((elm: object, index: integer): ?React$Element<NavbarItem> => {
       return <NavbarItem
+        key={index}
         name={elm.name}
         path={elm.path}
         handleClick={this.handleToggleClick} />;
@@ -53,7 +54,7 @@ export default class Navbar extends React.Component {
     return (
       <nav className='nav'>
         <header className='nav-left'>
-          <div className='nav-item is-brand'>
+          <div className='nav-item is-brand logo'>
             <img src='assets/images/logo-americanas-900-x-225-fw@3x.png' alt='Lojas Americanas logo' />
           </div>
         </header>
@@ -66,6 +67,8 @@ export default class Navbar extends React.Component {
 
         <div className={menuClass}>
           {navBarItem}
+
+          <a className="nav-item menu-item hollowed-button" href="#" onClick={this.handleToggleClick}> FAÇA UM TOUR </a>
         </div>
       </nav>
     );

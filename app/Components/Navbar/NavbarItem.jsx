@@ -12,7 +12,7 @@ export default class NavbarItem extends React.Component {
 
   render(): ?React$Element<a> {
     return (
-      <a className='nav-item' href={this.props.path} onClick={this.props.handleToggleClick}>
+      <a className='nav-item menu-item' href={this.props.path} onClick={this.props.handleToggleClick}>
         {this.props.name}
       </a>
     );

@@ -10,9 +10,10 @@ class NavbarStore extends EventEmitter {
     this.helpers = {};
     this.open = false;
     this.navBarItems = [
-      { name: 'Início', path: '#' },
-      { name: 'Destinos', path: '#' },
-      { name: 'Avaliação', path: '#' }
+      { name: 'DESTINOS', path: '#' },
+      { name: 'PLANOS', path: '#' },
+      { name: 'DEPOIMENTOS', path: '#' },
+      { name: 'CONTATO', path: '#' }
     ];
   }
 
