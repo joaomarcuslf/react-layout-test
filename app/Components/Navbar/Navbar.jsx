@@ -17,15 +17,15 @@ export default class Navbar extends React.Component {
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
-  shouldComponentUpdate(): boolean {
-    return true;
-  }
-
   componentWillMount() {
     NavbarStore.on('change', () => {
       this.getMenuState();
       this.getNavbarItems();
     });
+  }
+
+  shouldComponentUpdate(): boolean {
+    return true;
   }
 
   getMenuState() {
