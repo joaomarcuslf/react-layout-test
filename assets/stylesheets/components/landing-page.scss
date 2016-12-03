@@ -3,7 +3,7 @@
 
   .title {
     text-transform: uppercase;
-    padding: 100px 25px 10px 25px;
+    padding: 100px 25px 10px;
     font-family: 'Montserrat', impact, sans-serif;
     font-size: 26px;
     font-weight: bold;
@@ -24,6 +24,39 @@
     padding: 0 25px;
     text-align: center;
     color: $main-color;
+  }
+
+  .form {
+    padding: 0 25px;
+    text-align: center;
+
+    .form-content {
+      margin: 0 5px;
+      max-width: 50%;
+    }
+
+    .button {
+      @include border-background(50px, 2px);
+      text-transform: uppercase;
+
+    }
+
+    .input {
+      @include border-background(4px, 1px);
+
+      &::-webkit-input-placeholder {
+          color: $main-color;
+      }
+      &:-moz-placeholder {
+          color: $main-color;
+      }
+      &::-moz-placeholder {
+          color: $main-color;
+      }
+      &:-ms-input-placeholder {
+          color: $main-color;
+      }
+    }
   }
 
   @media (min-width: 980px) {

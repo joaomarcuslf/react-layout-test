@@ -1,0 +1,6 @@
+@mixin border-background($border-radius, $border-size) {
+  border-radius: $border-radius;
+  border: solid $border-size $main-color;
+  background-color: transparent;
+  color: $main-color
+}
