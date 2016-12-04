@@ -69,17 +69,11 @@
 
   .tab-item {
     a {
-      font-size: 13px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.33;
-      letter-spacing: 1px;
-      color: $secondary-color;
       border-bottom: 1px solid transparent;
 
       &:hover {
         border-bottom: 1px solid $secondary-color;
+        color: $secondary-color;
       }
     }
   }
