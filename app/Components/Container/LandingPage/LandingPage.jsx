@@ -42,7 +42,11 @@ export default class LandingPage extends React.Component {
           <h1 className='title is-fullwidth'>Nessas férias, escolha o produto certo para você.</h1>
           <h2 className='subtitle is-half is-offset-one-quarter'>Participe da nossa Mailing List.</h2>
           <form className='control form is-half is-offset-one-quarter'>
-            <input className='input form-content is-half' type='email' placeholder='Seu e-mail' onFocus={this.handleFocus} />
+            <input
+              className='input form-content is-half'
+              type='email'
+              placeholder='Seu e-mail'
+              onFocus={this.handleFocus} />
             <a className='button form-content is-outlined is-half'>
               Saiba Mais
             </a>
