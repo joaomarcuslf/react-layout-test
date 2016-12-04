@@ -15,7 +15,7 @@ export default class TabItem extends React.Component {
       'tab-item column is-active' :
       'tab-item column';
     return (
-      <div className={compoentClass}>
+      <div className={compoentClass} onClick={this.props.onClick}>
         <a>{this.props.tabName}</a>
       </div>
     );
