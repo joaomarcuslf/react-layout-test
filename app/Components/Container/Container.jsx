@@ -3,6 +3,7 @@ import React from 'react';
 
 import LandingPage from './LandingPage/LandingPage.jsx';
 import MainSection from './MainSection/MainSection.jsx';
+import ExtraSection from './ExtraSection/ExtraSection.jsx';
 
 export default class AppContainer extends React.Component {
   propTypes: {}
@@ -20,7 +21,7 @@ export default class AppContainer extends React.Component {
       <section className='application-container'>
         <LandingPage />
         <MainSection />
-        <div className='overlay-light' />
+        <ExtraSection />
       </section>
     );
   }
