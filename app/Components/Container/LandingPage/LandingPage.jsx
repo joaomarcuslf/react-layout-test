@@ -30,20 +30,21 @@ export default class LandingPage extends React.Component {
 
     return(
       <div className='landing-page'>
-        <div className='overlay-red bg-city'>
-          <div className='container'>
-            <h1 className='title is-fullwidth'>Nessas férias, escolha o produto certo para você.</h1>
-            <h2 className='subtitle is-half is-offset-one-quarter'>Participe da nossa Mailing List.</h2>
-            <form className='control form is-half is-offset-one-quarter'>
-              <input className='input form-content is-half' type='email' placeholder='Seu e-mail' />
-              <a className='button form-content is-outlined is-half'>
-                Saiba Mais
-              </a>
-            </form>
+        <div className='overlay-red'></div>
+        <div className='bg-city'></div>
 
-            <div className='icons-container'>
-              {iconsElm}
-            </div>
+        <div className='container'>
+          <h1 className='title is-fullwidth'>Nessas férias, escolha o produto certo para você.</h1>
+          <h2 className='subtitle is-half is-offset-one-quarter'>Participe da nossa Mailing List.</h2>
+          <form className='control form is-half is-offset-one-quarter'>
+            <input className='input form-content is-half' type='email' placeholder='Seu e-mail' />
+            <a className='button form-content is-outlined is-half'>
+              Saiba Mais
+            </a>
+          </form>
+
+          <div className='icons-container'>
+            {iconsElm}
           </div>
         </div>
       </div>
