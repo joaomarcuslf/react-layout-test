@@ -30,8 +30,9 @@ export default class LandingPage extends React.Component {
 
     return(
       <div className='landing-page'>
-        <div className='overlay-red'></div>
-        <div className='bg-city'></div>
+        <div className='overlay-red'>
+          <div className='bg-city' />
+        </div>
 
         <div className='container'>
           <h1 className='title is-fullwidth'>Nessas férias, escolha o produto certo para você.</h1>
