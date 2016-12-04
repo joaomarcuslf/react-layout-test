@@ -7,17 +7,8 @@
   }
 
   .title {
-    text-transform: uppercase;
     padding: 100px 25px 10px;
-    font-family: 'Montserrat', impact, sans-serif;
-    font-size: 26px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.09;
-    letter-spacing: -1.6px;
-    text-align: center;
-    color: $main-color;
+    @include title($main-color);
   }
 
   .subtitle {

@@ -1,0 +1,12 @@
+@mixin title($color) {
+  text-transform: uppercase;
+  font-family: 'Montserrat', impact, sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.09;
+  letter-spacing: -1.6px;
+  text-align: center;
+  color: $color;
+}
