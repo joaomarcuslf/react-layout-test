@@ -18,6 +18,8 @@ export default class AppContainer extends React.Component {
     return(
       <section className='application-container'>
         <LandingPage />
+        <div className='overlay-dark'></div>
+        <div className='overlay-light'></div>
       </section>
     );
   }
