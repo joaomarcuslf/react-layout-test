@@ -5,7 +5,7 @@
   .separator {
     width: 100%;
     height: 1px;
-    background-color: #7d7d7d;
+    background-color: $gray-black;
   }
 
   .section {
@@ -61,7 +61,7 @@
     height: 24px;
     border: 0;
     border-radius: 2.1px;
-    background-color: #f44336;
+    background-color: $tomato;
     color: $secondary-color;
     padding: 5px;
     margin-top: 5px;
