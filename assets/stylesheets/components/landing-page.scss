@@ -49,6 +49,11 @@
     .input {
       @include border-background(4px, 1px);
 
+      &:focus {
+        border-color: $on-focus;
+        color: $on-focus;
+      }
+
       &::-webkit-input-placeholder {
           color: $main-color;
       }
