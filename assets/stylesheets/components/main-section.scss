@@ -28,6 +28,12 @@
     text-align: center;
   }
 
+  .tabs-container {
+    .icon {
+      display: none;
+    }
+  }
+
   .tab-item {
     a {
       font-weight: lighter;
@@ -36,6 +42,48 @@
     &.is-active {
       a {
         font-weight: bold;
+      }
+    }
+  }
+
+  @media (max-width: 980px) {
+    .tabs-container {
+      display: list-item;
+      border: solid 1px white;
+      border-radius: 35px;
+      max-width: 70%;
+      padding: 0;
+      text-align: center;
+      margin: 15px 15%;
+      max-height: 40px;
+
+      .tab-item:not(.is-active) {
+        display: none;
+      }
+
+      .icon {
+        position: relative;
+        display: block;
+        top: 5px;
+        float: right;
+        left: -5px;
+        z-index: 15;
+      }
+
+    }
+
+    .open {
+      background-color: $main-color;
+      .tab-item {
+        display: block !important;
+        background-color: $main-color;
+        position: relative;
+        z-index: 10;
+
+        &:nth-child(2) {
+          border-radius: 35px;
+          border-bottom: solid 1px white;
+        }
       }
     }
   }
