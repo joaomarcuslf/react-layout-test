@@ -1,5 +1,6 @@
 .bg-city {
+  @extend .content-block;
   background: url('../assets/images/background.png') center;
   background-size: cover;
-  @extend .content-block;
+  background-position: 50% 0;
 }
