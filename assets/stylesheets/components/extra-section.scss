@@ -1,0 +1,91 @@
+.extra-section {
+  @extend .content-block;
+  text-align: center;
+  padding: 50px 25px;
+
+  .card {
+    box-shadow: none;
+  }
+
+  .card-image {
+    text-align: center;
+    padding: 10px;
+    .image {
+      margin: 0 auto;
+      img {
+        border: $tomato solid 3px;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .card-content {
+    padding: 10px;
+
+    .title {
+      @include title($main-color);
+      font-size: 12px;
+      text-transform: capitalize;
+      letter-spacing: 0.4px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      font-weight: normal;
+      font-style: italic;
+      font-stretch: normal;
+      line-height: 1.45;
+      padding: 0 25px;
+      text-align: center;
+      color: $main-color;
+    }
+  }
+
+  .dots-container {
+    text-align: center;
+  }
+
+  .dot {
+    border: solid $tomato 3px;
+    background-color: transparent;
+    height: 8px;
+    width: 8px;
+    margin: 0 auto;
+
+    border-radius: 100%;
+
+    &.active {
+      background-color: $tomato;
+    }
+  }
+
+  .control-panel {
+    display: none;
+  }
+
+  @media (min-width: 980px) {
+    .control-panel {
+      display: block;
+      position: relative;
+      margin: 0 50px;
+      top: -150px;
+
+      .next {
+        float: right;
+      }
+      .prev {
+        float: left;
+      }
+
+      .icon {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .dots-container {
+      max-width: 40%;
+      margin: 0 auto;
+    }
+  }
+}
