@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const PORT = process.env.PORT || 3000;
+const IP_BIND = process.env.IP || '0.0.0.0';
 
 http.createServer((request, response) => {
     let filePath = '.' + request.url;
@@ -55,12 +56,12 @@ http.createServer((request, response) => {
         }
     });
 
-}).listen(PORT, '0.0.0.0', (err) => {
+}).listen(PORT, IP_BIND, (err) => {
   if(err) {
     console.log(err);
     return;
   }
 
-  let appUrl = 'http://localhost:' + PORT;
+  let appUrl = `http://${IP_BIND}:${PORT}`;
   console.log('Server running on', appUrl);
 });
