@@ -105,14 +105,21 @@
       }
     }
 
+    .is-clear-desktop {
+      display: inline-flex;
+      margin: -15px 18% 0;
+    }
+
     .above-content {
+      display: inline-block;
+
       .top-text {
         display: none;
       }
     }
 
-    .is-pulled-right {
-      margin-left: 100%;
+    .right-content {
+      margin-right: 10px;
     }
   }
 }

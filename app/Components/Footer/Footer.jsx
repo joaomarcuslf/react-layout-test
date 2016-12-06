@@ -62,7 +62,7 @@ export default class Footer extends React.Component {
           <div className='separator' />
 
           <div className='columns is-multiline-mobile above-content'>
-            <div className='columns is-mobile column tabs-container'>
+            <div className='columns is-mobile column tabs-container is-clear-desktop'>
               <div className='tab-item column'>
                 <a>DESTINOS</a>
               </div>
