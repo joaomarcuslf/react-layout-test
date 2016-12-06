@@ -71,6 +71,10 @@ export default class MainSection extends React.Component {
 
             <div className={tabsContainerCLass} onClick={this.handleClick}>
               <Icon iconName='dropdown-icon' alt='dropdown' />
+              <span className='is-hidden-desktop hidden-tab'>
+                <TabItem tabName='' />
+              </span>
+
               {tabsElm}
             </div>
 
