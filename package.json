@@ -47,7 +47,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "start": "npm install && gulp run:build",
+    "start": "npm install --silent && gulp run:build && gulp advice:server",
     "server": "node server.js",
     "dev": "nf start",
     "dev-server": "webpack-dev-server --hot --inline --color --port 8000 --host 0.0.0.0 --output-public-path=/build/ --content-base ./",

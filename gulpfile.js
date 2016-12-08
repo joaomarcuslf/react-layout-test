@@ -16,6 +16,10 @@ gulp.task('default', () => {
   gutil.log('Gulp is working fine');
 });
 
+gulp.task('advice:server', () => {
+  gutil.log('Run', gutil.colors.red('npm run server'), 'to start the application');
+});
+
 // Bundle
 
 gulp.task('bundle:js', () => {
