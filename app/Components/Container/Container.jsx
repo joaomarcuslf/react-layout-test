@@ -35,7 +35,7 @@ export default class AppContainer extends React.Component {
       <section className='application-container'>
         <LandingPage {...this.state.landingPage} />
         <MainSection {...this.state.mainSection} />
-        <ExtraSection />
+        <ExtraSection {...this.state.extraSection} />
       </section>
     );
   }

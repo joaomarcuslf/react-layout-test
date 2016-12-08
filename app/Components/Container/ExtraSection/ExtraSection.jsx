@@ -1,62 +1,52 @@
 /* @flow */
 import React from 'react';
 
+import ExtraSectionActions from '../../../Actions/ExtraSectionActions.es6';
+
 import Card from './Card.jsx';
 import Dot from './Dot.jsx';
 import Icon from '../../Icon/Icon.jsx';
 
-export default class MainSection extends React.Component {
+export default class ExtraSection extends React.Component {
   propTypes: {}
 
   constructor() {
     super();
-
-    let user = {
-      isActive: true,
-      id: 1,
-      userName: 'Julia Souza',
-      destiny: 'destino: Helsinki, Finlândia',
-      path: 'foto@3x',
-      userOpinion:
-      '“A viagem foi ótima! O serviço oferecido pela Lojas Americanas foi perfeito.' +
-      ' Não vemos a hora das próximas férias chegarem e prepararmos as malas de novo.”'
-    };
-
-    this.state = {
-      activeUser: user,
-      users: [
-        { id: 0, isActive: false },
-        user,
-        { id: 2, isActive: false }
-      ]
-    };
   }
 
   shouldComponentUpdate(): boolean {
     return true;
   }
 
-  handleClick(id: integer) {
-    console.log('Id Clicked:', id);
+  handleClick(element: integer) {
+    /*
+      @params
+        element: integer
+      Will send the action of click
+    */
 
-    this.setState({
-      users: this.state.users.map((elem: object): object => {
-        (elem.id === id) ?
-          elem.isActive = true :
-          elem.isActive = false;
+    ExtraSectionActions.selectUser(element);
+  }
 
-        return elem;
-      })
-    });
+  nextUser() {
+    ExtraSectionActions.nextUser();
+  }
+
+  prevUser() {
+    ExtraSectionActions.prevUser();
   }
 
   render(): ?React$Element<div> {
-    let activeUser = this.state.activeUser;
+    let activeId = parseInt(
+      this.props.activeUser
+    ) - 1;
 
-    let dotsElm = this.state.users.map((elem: object): object => {
+    let activeUser = this.props.users[activeId];
+
+    let dotsElm = this.props.users.map((elem: object): object => {
       return <div
         className='column container'
-        onClick={this.handleClick.bind(this, elem.id)}
+        onClick={this.handleClick.bind(this, elem)}
         key={elem.id}>
         <Dot isActive={elem.isActive} />
       </div>;
@@ -72,11 +62,15 @@ export default class MainSection extends React.Component {
 
         <div className='control-panel'>
           <div className='prev'>
-            <Icon iconName='prev@3x' alt='anterior' />
+            <a onClick={this.prevUser}>
+              <Icon iconName='prev@3x' alt='anterior' />
+            </a>
           </div>
 
           <div className='next'>
-            <Icon iconName='next@3x' alt='próximo' />
+            <a onClick={this.nextUser}>
+              <Icon iconName='next@3x' alt='próximo' />
+            </a>
           </div>
         </div>
 

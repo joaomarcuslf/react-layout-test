@@ -100,4 +100,111 @@ describe('ApplicationStore', () => {
 			});
 		});
 	});
+
+	describe('extraSection states', () => {
+		it('should have the first card group selected at the begining', () => {
+			let result = ApplicationStore.getApplicationState();
+			let selectedGroup = result.extraSection.activeUser;
+
+			expect(selectedGroup).to.be.equals('1');
+		});
+
+		describe('toggleUser', () => {
+			it('should change the active user', () => {
+				ApplicationStore.toggleUser({ id: 3 });
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('3');
+			});
+
+			it('should not change the active user if the same is passed', () => {
+				ApplicationStore.toggleUser({ id: 3 });
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('3');
+			});
+
+			it('should not change the active user if nothing is passes', () => {
+				ApplicationStore.toggleUser();
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('3');
+			});
+
+			it('should change the active user to the first one', () => {
+				ApplicationStore.toggleUser({ id: 1 });
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('1');
+			});
+		});
+
+		describe('getNextUser', () => {
+			it('should change to the next user(1 -> 2)', () => {
+				ApplicationStore.toggleUser({ id: 1 });
+				ApplicationStore.getNextUser();
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('2');
+			});
+
+			it('should change to the next user(2 -> 3)', () => {
+				ApplicationStore.getNextUser();
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('3');
+			});
+
+			it('should change to the next user(3 -> 1)', () => {
+				ApplicationStore.getNextUser();
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('1');
+			});
+		});
+
+		describe('getPrevUser', () => {
+			it('should change to the next user(1 -> 3)', () => {
+				ApplicationStore.toggleUser({ id: 1 });
+				ApplicationStore.getPrevUser();
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('3');
+			});
+
+			it('should change to the next user(3 -> 2)', () => {
+				ApplicationStore.getPrevUser();
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('2');
+			});
+
+			it('should change to the next user(2 -> 1)', () => {
+				ApplicationStore.getPrevUser();
+
+				let result = ApplicationStore.getApplicationState();
+				let selectedGroup = result.extraSection.activeUser;
+
+				expect(selectedGroup).to.be.equals('1');
+			});
+		});
+	});
 });
