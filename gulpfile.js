@@ -39,7 +39,7 @@ gulp.task('bundle:scss', () => {
       'last 5 versions'
     ],
     cascade: false
-  }).info())
+  }))
   .pipe(cssComb())
   .pipe(concat('bundle.css'))
   .pipe(gulp.dest('./build/'));
