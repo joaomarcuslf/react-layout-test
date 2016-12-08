@@ -32,7 +32,14 @@ gulp.task('bundle:scss', () => {
     openbrace: 'separate-line',
     autosemicolon: true
   }))
-  .pipe(autoprefixer())
+  .pipe(autoprefixer({
+    browsers: [
+      '> 5%',
+      'IE 7',
+      'last 5 versions'
+    ],
+    cascade: false
+  }).info())
   .pipe(cssComb())
   .pipe(concat('bundle.css'))
   .pipe(gulp.dest('./build/'));
