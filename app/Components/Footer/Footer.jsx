@@ -16,6 +16,10 @@ export default class Footer extends React.Component {
     return false;
   }
 
+  scrollToNav() {
+    document.querySelector('.nav').scrollIntoView();
+  }
+
   render(): ?React$Element<h1> {
 
     let paragraphsElm = this.state.contactTexts.map(
@@ -73,7 +77,7 @@ export default class Footer extends React.Component {
 
             <div className='column columns is-mobile float-bottom-mobile is-half-mobile right-content'>
               <span className='paragraph column is-narrow top-text'>Voltar ao Topo </span>
-              <a href='#nav' className='top-button column is-narrow is-pulled-right'>
+              <a onClick={this.scrollToNav} className='top-button column is-narrow is-pulled-right'>
                 <img src='assets/images/icons/go-to-top@3x.png' alt='Ir ao topo' />
               </a>
             </div>
