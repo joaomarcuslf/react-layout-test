@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react';
 
-import NavbarStore from '../../Stores/NavbarStore.es6';
+import ApplicationStore from '../../Stores/ApplicationStore.es6';
 import NavbarActions from '../../Actions/NavbarActions.es6';
 import NavbarItem from './NavbarItem.jsx';
 
@@ -9,18 +9,13 @@ export default class Navbar extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      open: NavbarStore.getMenuState(),
-      navBarItems: NavbarStore.getNavbarItems()
-    };
-
+    this.state = ApplicationStore.getNavbarState();
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
   componentWillMount() {
-    NavbarStore.on('change', () => {
-      this.getMenuState();
-      this.getNavbarItems();
+    ApplicationStore.on('change', () => {
+      this.getNavbarState();
     });
   }
 
@@ -28,12 +23,8 @@ export default class Navbar extends React.Component {
     return true;
   }
 
-  getMenuState() {
-    this.setState({open: NavbarStore.getMenuState()});
-  }
-
-  getNavbarItems() {
-    this.setState({navBarItems: NavbarStore.getNavbarItems()});
+  getNavbarState() {
+    this.setState(ApplicationStore.getNavbarState());
   }
 
   handleToggleClick() {
