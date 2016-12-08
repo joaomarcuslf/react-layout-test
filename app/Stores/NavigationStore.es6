@@ -41,7 +41,13 @@ class NavigationStore extends EventEmitter {
     return this.footerStates;
   }
 
-	changeMenuState() {
+  changeMenuState() {
+    /*
+      @params:
+
+      Will change Navbar open state
+    */
+
 		let newNavbarState = this.getNavbarState();
 
 		newNavbarState.open = !newNavbarState.open;
