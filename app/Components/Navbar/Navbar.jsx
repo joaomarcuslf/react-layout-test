@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react';
 
-import ApplicationStore from '../../Stores/ApplicationStore.es6';
+import NavigationStore from '../../Stores/NavigationStore.es6';
 import NavbarActions from '../../Actions/NavbarActions.es6';
 import NavbarItem from './NavbarItem.jsx';
 
@@ -9,12 +9,12 @@ export default class Navbar extends React.Component {
   constructor() {
     super();
 
-    this.state = ApplicationStore.getNavbarState();
+    this.state = NavigationStore.getNavbarState();
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
   componentWillMount() {
-    ApplicationStore.on('change', () => {
+    NavigationStore.on('change', () => {
       this.getNavbarState();
     });
   }
@@ -24,7 +24,7 @@ export default class Navbar extends React.Component {
   }
 
   getNavbarState() {
-    this.setState(ApplicationStore.getNavbarState());
+    this.setState(NavigationStore.getNavbarState());
   }
 
   handleToggleClick() {

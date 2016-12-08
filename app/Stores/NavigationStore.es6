@@ -3,7 +3,7 @@ import { EventEmitter } from 'events';
 import dispatcher from '../Dispatcher/dispatcher.es6';
 import Constants from '../Constants/Constants.es6';
 
-class ApplicationStore extends EventEmitter {
+class NavigationStore extends EventEmitter {
   constructor() {
     super();
 
@@ -17,11 +17,28 @@ class ApplicationStore extends EventEmitter {
 				{ name: 'DEPOIMENTOS', path: '#' },
 				{ name: 'CONTATO', path: '#' }
 			]
-		};
+    };
+
+    this.footerStates = {
+      contactTexts: [
+        'Rua Nome da Rua, 300 Rio de Janeiro - RJ',
+        '+55 21 1234-5678',
+        'contato@lojasamericanas.net'
+      ],
+      icons: [
+        { iconName: 'pinterest', alt: 'Logo Pinterest' },
+        { iconName: 'facebook', alt: 'Logo Facebook' },
+        { iconName: 'twitter', alt: 'Logo Twitter' }
+      ]
+    };
   }
 
   getNavbarState(): boolean {
     return this.navBarStates;
+  }
+
+  getFooterState(): boolean {
+    return this.footerStates;
   }
 
 	changeMenuState() {
@@ -44,7 +61,7 @@ class ApplicationStore extends EventEmitter {
   }
 }
 
-const applicationStore = new ApplicationStore();
-dispatcher.register(applicationStore.handleActions.bind(applicationStore));
+const navigationStore = new NavigationStore();
+dispatcher.register(navigationStore.handleActions.bind(navigationStore));
 
-export default applicationStore;
+export default navigationStore;

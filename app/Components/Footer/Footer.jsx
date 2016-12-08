@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react';
+import NavigationStore from '../../Stores/NavigationStore.es6';
 import FooterSection from './FooterSection.jsx';
 import Paragraph from './Paragraph.jsx';
 import Icon from '../Icon/Icon.jsx';
@@ -8,18 +9,7 @@ export default class Footer extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      contactTexts: [
-        'Rua Nome da Rua, 300 Rio de Janeiro - RJ',
-        '+55 21 1234-5678',
-        'contato@lojasamericanas.net'
-      ],
-      icons: [
-        { iconName: 'pinterest', alt: 'Logo Pinterest' },
-        { iconName: 'facebook', alt: 'Logo Facebook' },
-        { iconName: 'twitter', alt: 'Logo Twitter' }
-      ]
-    };
+    this.state = NavigationStore.getFooterState();
   }
 
   shouldComponentUpdate(): boolean {
