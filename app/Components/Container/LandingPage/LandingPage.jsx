@@ -1,6 +1,8 @@
 /* @flow */
 import React from 'react';
 
+import LandingPageActions from '../../../Actions/LandingPageActions.es6';
+
 import Icon from '../../Icon/Icon.jsx';
 
 export default class LandingPage extends React.Component {
@@ -9,28 +11,32 @@ export default class LandingPage extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      icons: [
-        { iconName: 'plane', alt: 'Plane Icon' },
-        { iconName: 'wallet', alt: 'Wallet Icon' },
-        { iconName: 'case', alt: 'Case Icon' }
-      ]
-    };
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   shouldComponentUpdate(): boolean {
-    return false;
+    return true;
   }
 
   handleFocus(event: object) {
     event.target.scrollIntoView();
   }
 
+  handleInputChange(event: object) {
+    let emailValue = event.target.value;
+
+    LandingPageActions.handleEmailChange(emailValue);
+  }
+
   render(): ?React$Element<div> {
-    let iconsElm = this.state.icons.map(
+    let iconsElm = this.props.icons.map(
       (elem: object, index: integer): ?React$Element<Icon> => {
         return <Icon iconName={elem.iconName} alt={elem.alt} key={index} />;
-      });
+    });
+
+    let validEmailClass = (this.props.validEmail) ?
+      'button form-content is-outlined is-half' :
+      'button form-content is-outlined is-half is-disabled';
 
     return(
       <div className='landing-page'>
@@ -46,8 +52,9 @@ export default class LandingPage extends React.Component {
               className='input form-content is-half'
               type='email'
               placeholder='Seu e-mail'
-              onFocus={this.handleFocus} />
-            <a className='button form-content is-outlined is-half'>
+              onFocus={this.handleFocus}
+              onChange={this.handleInputChange} />
+            <a className={validEmailClass}>
               Saiba Mais
             </a>
           </form>
