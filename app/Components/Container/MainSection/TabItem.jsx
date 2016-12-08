@@ -7,7 +7,7 @@ export default class TabItem extends React.Component {
   }
 
   shouldComponentUpdate(): boolean {
-    return false;
+    return true;
   }
 
   render(): ?React$Element<div> {
