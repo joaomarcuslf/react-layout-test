@@ -23,7 +23,7 @@ npm run test #will test all specs
 npm run dev
 gulp bdd #will run every test on save
 ```
-### Deployment Run:
+## Deployment steps:
 ```bash
 npm run deploy #this will take a while
 ```
