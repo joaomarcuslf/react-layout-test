@@ -9,6 +9,8 @@ const sass = require('gulp-sass');
 const exec = require('child_process').exec;
 const cssBeautify = require('gulp-cssbeautify');
 const cssComb = require('gulp-csscomb');
+const imagemin = require('gulp-imagemin');
+const zip = require('gulp-zip');
 
 /* Tasks */
 
@@ -98,4 +100,51 @@ gulp.task('run:test', () => {
   			js: babel
   		}
   	}));
+});
+
+// Deploy tasks
+
+gulp.task('deploy:scss', () => {
+  return gulp.src('./assets/stylesheets/main.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(cleanCSS({
+      compatibility: 'ie8',
+      debug: true
+    }, function() {}))
+    .pipe(concat('bundle.css'))
+    .pipe(gulp.dest('deploy/build'));
+});
+
+gulp.task('deploy:js', () => {
+  return exec('npm run deploy:js');
+});
+
+gulp.task('deploy:img', () => {
+    gulp.src('assets/images/**/*.*')
+        .pipe(imagemin({
+            optimizationLevel: 9
+        }))
+        .pipe(gulp.dest('deploy/assets/images'));
+});
+
+gulp.task('deploy:index', () => {
+    let fs = require('fs-extra');
+
+    return fs.copySync('index.html', 'deploy/index.html');
+});
+
+gulp.task('deploy:clean', () => {
+    let fs = require('fs-extra');
+
+    return fs.removeSync('deploy');
+});
+
+gulp.task('deploy:zip', () => {
+    gulp.src('deploy/**/*')
+      .pipe(zip('deploy.tar'))
+      .pipe(gulp.dest('deploy'));
+});
+
+gulp.task('pre:deploy', ['deploy:clean', 'deploy:scss', 'deploy:img', 'deploy:index'], () => {
 });
